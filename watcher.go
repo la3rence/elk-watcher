@@ -4,12 +4,18 @@ import (
 	"elk-watcher/request"
 	"fmt"
 	"log"
+	"os"
 	"time"
 )
 
 func main() {
 	var ch chan int
-	ticker := time.NewTicker(time.Second * 60)
+	durationString := os.Getenv("DURATION")
+	duration, err := time.ParseDuration(durationString)
+	if err != nil {
+		log.Fatal("Wrong params: DURATION")
+	}
+	ticker := time.NewTicker(duration)
 	go func() {
 		for range ticker.C {
 			watch()
