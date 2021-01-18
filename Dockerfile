@@ -10,4 +10,4 @@ RUN CGO_ENABLED=0 go build -ldflags "-s -w" -o watcher &&\
 
 FROM scratch as runner
 COPY --from=builder /usr/src/app/watcher /opt/app/
-CMD ["/opt/app/wathcer"]
+CMD ["/opt/app/watcher"]
