@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: watcher
+  namespace: default
+  labels:
+    app: watcher
+spec:
+  selector:
+    matchLabels:
+      app: watcher
+  # 只保留 1 个 Pod 副本
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: watcher
+    spec:
+      containers:
+        - name: watcher
+          image: lawrence2018/watcher:latest
+          imagePullPolicy: Always
+          env:
+            - name: ELASTIC_USERNAME
+              value: 'username'
+            - name: ELASTIC_PASSWORD
+              value: 'password'
+            - name: DINGTALK_TOKEN
+              value: 'change me'
+            - name: ELASTIC_URL
+              value: 'http://elastic-hostname/index-name/_search'
+            - name: DURATION
+              value: '60s'
+      restartPolicy: Always

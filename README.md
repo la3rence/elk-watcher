@@ -41,3 +41,9 @@ docker run --name=watcher -itd -e ELASTIC_USERNAME="username" \
   DURATION="60s" \
   lawrence2018/watcher:latest
 ```
+
+有次镜像后，当然可以通过 Kubernetes 来编排。
+
+```shell
+kubectl apply -f deployment.yml
+```
