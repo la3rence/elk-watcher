@@ -10,3 +10,5 @@ release:
     name: elk-watcher
 
   draft: false
+  extra_files:
+    - glob: ./release/*
