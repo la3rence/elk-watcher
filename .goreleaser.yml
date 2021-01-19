@@ -3,12 +3,9 @@ builds:
 checksum:
   name_template: 'checksums.txt'
 release:
-  # Same as for github
-  # Note: it can only be one: either github, gitlab or gitea
   github:
     owner: Lonor
     name: elk-watcher
-
   draft: false
   extra_files:
     - glob: ./release/*
