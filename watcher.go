@@ -29,8 +29,8 @@ func watch() {
 	value := request.GetLogCount()
 	if value >= 30 {
 		message := fmt.Sprintf("[Warning] QPS 高于阈值. 当前采样为 %d\n", value)
-		request.PostDingTalk(message)
 		log.Printf(message)
+		request.PostDingTalk(message)
 	} else if value > 0 {
 		log.Printf("[Info] QPS: %d 正常\n", value)
 	}

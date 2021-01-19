@@ -24,7 +24,6 @@ export DURATION="60s"
 在上述环境下直接运行:
 
 ```shell
-
 ./elk-watcher
 ```
 

@@ -9,5 +9,6 @@ RUN CGO_ENABLED=0 go build -ldflags "-s -w" -o watcher &&\
   mv -f _upx_watcher watcher
 
 FROM scratch as runner
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /usr/src/app/watcher /opt/app/
 CMD ["/opt/app/watcher"]
