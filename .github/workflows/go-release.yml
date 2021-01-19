@@ -28,7 +28,7 @@ jobs:
         uses: crazy-max/ghaction-upx@v1
         with:
           version: latest
-          file: release/*
+          file: release/watcher-linux-amd64
           args: -fq
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
