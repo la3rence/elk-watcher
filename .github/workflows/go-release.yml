@@ -20,16 +20,16 @@ jobs:
       - name: Go build
         run: |
           export GOARCH=amd64
-          os_all='linux windows darwin freebsd'
+          os_all='linux windows darwin'
           for os in $os_all; do
-            CGO_ENABLED=0  GOOS=$os go build -ldflags '-w -s' -o release/watcher-$os-$GOARCH
+            CGO_ENABLED=0 GOOS=$os go build -ldflags '-w -s' -o release/watcher-$os-$GOARCH
           done
       - name: UPX
         uses: crazy-max/ghaction-upx@v1
         with:
           version: latest
-          file: release/watcher-linux-amd64
-          args: -fq
+          file: release/watcher-linux-amd64 release/watcher-darwin-amd64 release/watcher-windows-amd64
+          args: --best
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
