@@ -1,9 +1,9 @@
-# ELK watcher by Go
-
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Lonor/elk-watcher?color=%23FFFFFF)
 ![Build docker image](https://github.com/Lonor/elk-watcher/workflows/Build%20docker%20image/badge.svg)
 
-对接 Elastic Search 的 REST API，发送 HTTP 请求对应的索引数据，定时执行以实现周期监控.
-效果类似于 ELK 付费白金版的 watcher 功能.
+# ELK watcher by Go
+
+对接 Elastic Search 的 REST API，发送 HTTP 请求对应的索引数据，定时执行以实现周期监控. 效果类似于 ELK 付费白金版的 watcher 功能.
 
 ```shell
 go build
