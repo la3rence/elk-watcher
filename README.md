@@ -2,7 +2,8 @@
 
 ![Build docker image](https://github.com/Lonor/elk-watcher/workflows/Build%20docker%20image/badge.svg)
 
-对接 Elastic Search 的 REST API，发送 HTTP 请求对应的索引数据，定时执行以实现周期监控. 效果类似于 ELK 付费白金版的 watcher 功能.
+对接 Elastic Search 的 REST API，发送 HTTP 请求对应的索引数据，定时执行以实现周期监控.
+效果类似于 ELK 付费白金版的 watcher 功能.
 
 ```shell
 go build
@@ -42,7 +43,7 @@ docker run --name=watcher -itd -e ELASTIC_USERNAME="username" \
   lawrence2018/watcher:latest
 ```
 
-有次镜像后，当然可以通过 Kubernetes 来编排。
+有镜像后，当然可以通过 Kubernetes 来编排。
 
 ```shell
 kubectl apply -f deployment.yml
