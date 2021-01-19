@@ -47,7 +47,7 @@ func PostDingTalk(msg string) {
 	dingTalkURL := "https://oapi.dingtalk.com/robot/send?access_token=" + accessToken
 	data := `{"msgtype": "text","text": {"content": "` + msg + `"}}`
 	resp := Request(dingTalkURL, data, "POST", nil)
-	log.Printf("[DingTalk Response] [%s\n]", resp)
+	log.Printf("[DingTalk Response] [%s]\n", resp)
 }
 
 func GetLogCount() (value int) {
