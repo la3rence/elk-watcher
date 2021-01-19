@@ -1,4 +1,4 @@
-# ELK watcher (Go 实现)
+# ELK watcher by Go
 
 ![Build docker image](https://github.com/Lonor/elk-watcher/workflows/Build%20docker%20image/badge.svg)
 
