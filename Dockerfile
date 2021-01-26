@@ -1,6 +1,7 @@
 FROM golang:1.15-alpine as builder
 WORKDIR /usr/src/app
 RUN apk add --no-cache upx
+RUN apk add --update tzdata
 COPY ./go.mod ./
 RUN go mod download
 COPY . .
