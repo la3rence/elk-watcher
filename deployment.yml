@@ -31,4 +31,6 @@ spec:
               value: 'http://elastic-hostname/index-name/_search'
             - name: DURATION
               value: '60s'
+            - name: TZ
+              value: 'Asia/Shanghai'
       restartPolicy: Always

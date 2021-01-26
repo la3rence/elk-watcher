@@ -1,3 +1,4 @@
 *.sh
 .idea/
 release/
+.DS_Store
