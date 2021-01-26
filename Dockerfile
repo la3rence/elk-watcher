@@ -10,6 +10,6 @@ RUN CGO_ENABLED=0 go build -ldflags "-s -w" -o watcher &&\
 
 FROM scratch as runner
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=build /usr/share/zoneinfo /usr/share/zoneinfo
+COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 COPY --from=builder /usr/src/app/watcher /opt/app/
 CMD ["/opt/app/watcher"]
