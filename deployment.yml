@@ -27,6 +27,8 @@ spec:
               value: 'password'
             - name: DINGTALK_TOKEN
               value: 'change me'
+            - name: DINGTALK_SECRET
+              value: 'change me'
             - name: ELASTIC_URL
               value: 'http://elastic-hostname/index-name/_search'
             - name: DURATION

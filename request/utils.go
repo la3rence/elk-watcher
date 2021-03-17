@@ -2,6 +2,7 @@ package request
 
 import (
 	"encoding/json"
+	dingtalk "github.com/Lonor/dingtalkbot-sdk"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -39,15 +40,11 @@ func Request(url string, data string, method string, headers map[string]string) 
 	} else {
 		return string(bodyByte)
 	}
-
 }
 
 func PostDingTalk(msg string) {
-	accessToken := os.Getenv("DINGTALK_TOKEN")
-	dingTalkURL := "https://oapi.dingtalk.com/robot/send?access_token=" + accessToken
-	data := `{"msgtype": "text","text": {"content": "` + msg + `"}}`
-	resp := Request(dingTalkURL, data, "POST", nil)
-	log.Printf("[DingTalk Response] [%s]\n", resp)
+	bot := dingtalk.NewDingBot(os.Getenv("DINGTALK_TOKEN"), os.Getenv("DINGTALK_SECRET"))
+	_ = bot.SendSimpleText(msg)
 }
 
 func GetLogCount() (value int) {
